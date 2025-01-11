@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Loan Details</h1>
+<div mat-dialog-content>
+  <p><strong>Loan Amount:</strong> {{ data?.loanAmount | currency:'ILS':true }}</p>
+  <p><strong>Total Payment:</strong> {{ data?.totalPayment | currency:'ILS':true }}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button  mat-dialog-close type="submit" mat-dialog-close>Close</button>
+</div>

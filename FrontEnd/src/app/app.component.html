@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Loan Suggestion</h1>
+  <form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="userId">User ID:</label>
+      <input id="userId" formControlName="userId" type="text" placeholder="Enter GUID (e.g., 123e4567-e89b-12d3-a456-426614174000)"/>
+      <div class="error" *ngIf="loanForm.get('userId')?.invalid && loanForm.get('userId')?.touched">
+        Valid GUID is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="loanAmount">Loan Amount:</label>
+      <input id="loanAmount" formControlName="loanAmount" type="number" />
+      <div class="error" *ngIf="loanForm.get('loanAmount')?.invalid && loanForm.get('loanAmount')?.touched">
+        Loan amount must be greater than 0.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="loanPeriodInMonth">Loan Period (Months):</label>
+      <input id="loanPeriodInMonth" formControlName="loanPeriodInMonth" type="number" />
+      <div class="error" *ngIf="loanForm.get('loanPeriodInMonth')?.invalid && loanForm.get('loanPeriodInMonth')?.touched">
+        Loan period must be greater than 0.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="loanForm.invalid">Get Loan Suggestion</button>
+  </form>
+</div>
