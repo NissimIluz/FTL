@@ -27,7 +27,7 @@ public class LoanInterestsCalculatorFactory: ILoanInterestsCalculatorFactory
         {
             return (ILoanInterestsCalculatorService)_serviceProvider.GetService(typeof(GroupACalculator));
         }
-        else if(clientAge > GroupB )
+        else if(clientAge < GroupB )
 
         {
             return (ILoanInterestsCalculatorService)_serviceProvider.GetService(typeof(GroupBCalculator));
